@@ -1,140 +1,88 @@
-.my_btn {
-    margin-right: 5px;
-    margin-top: 5px;
-    width: 50px;
-    height: 50px;
-    border: None;
-    background: #390879;
-    color: red;
-    font-size: 1.5rem;
-    font-family: Arial, Helvetica, sans-serif;
-    cursor: pointer;
-    user-select: None;
-    font-weight: lighter;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.my_btn:hover {
-    filter: invert(150%);
-}
-.my_btn.primary {
-    background: #000000;
-}
-
-.my_btn.secondary {
-    background: blue;
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    font-family: Arial, sans-serif;
 }
 
-.my_btn.execute {
-    width: 50px;
+.calculator {
+    width: 320px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 
-.result {
-    width: 220px;
-    height: 100px;
-    margin-bottom: 15px;
-    padding-right: 10px;
-    background: #000000;
-    text-align: right;
-    color: yellow;
-    font-size: 1.5rem;
-    font-family: Arial, Helvetica, sans-serif;
-    border-radius: 10px;
-    font-weight: bold;
-}
-
-.font_digit {
-    font-family:'Courier New', Courier, monospace;
-}
-
-.color_change:focus {
-    background-color: yellow;
-}
-
-.dropdown_list {
+.github-button {
     display: block;
-    position: relative;
-    width: 50px;
-}
-
-.btn_open_list {
-    background-color: #4caf50;
-    color: white;
-    border: None;
-}
-
-.dropdown_content {
-    display: none;
-    position: absolute;
-    background-color: black;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgb(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.dropdown_content a {
-    color: #f1f1f1;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown_content a:hover {
-    background-color: goldenrod;
-}
-
-.dropdown_list:hover .dropdown_content {
-    display: block;
-}
-
-.dropdown_list:hover .btn_open_list {
-    background-color: #3e8e41;
-}
-
-#btn_000 {
     text-align: center;
-}
-
-#podpis {
-    color: yellow;
-    margin-left: 150px;
-}
-
-#calc {
-    background: grey;
-    width: 232px;
-    height: 490px;
+    padding: 10px;
+    margin: 10px 20px;
+    font-size: 1.2em;
+    color: #ffffff;
+    background: #333;
     border-radius: 10px;
-    margin: auto;
-    margin-top: -210px;
+    text-decoration: none;
+    transition: background 0.3s;
 }
 
-#change_theme {
-    text-wrap: balance;
-    background-color:#4caf50;
-    border: solid 1px #000000;
-    width: 110px;
+.github-button:hover {
+    background: #444;
 }
 
-#change_theme:active {
-    filter:brightness(150%)
+.display {
+    background: #333;
+    color: #ffffff;
+    text-align: right;
+    padding: 20px;
+    font-size: 2em;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
-#change_theme_window {
-    width: 110px;
-    text-wrap: balance;
-    border: solid 1px #000000;
-    background-color: #4caf50;
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 20px;
 }
 
-#github {
-    background-color: chartreuse;
+button {
+    font-size: 1.5em;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-#github:hover {
-    filter:brightness(170%)
+button:active {
+    transform: scale(0.95);
 }
 
-html {
-    background-image: url('fon-1.jpg');
-    background-size: cover;
+button:nth-child(4n+4),
+.equal {
+    background: #ff9800;
+}
+
+button:not(.equal):nth-child(-n+3) {
+    background: #b0bec5;
+}
+
+button:not(.equal) {
+    background: #546e7a;
+}
+
+.equal {
+    grid-column: span 2;
+    background: #ff9800;
 }

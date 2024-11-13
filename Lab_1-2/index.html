@@ -1,55 +1,95 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="ru">
 <head>
-  <title>Калькулятор</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="../Lab_1-2/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
 </head>
 
 <body>
-  <div> <!-- div - это базовый html-контейнер, который может содержать в себе другие html-элементы. -->
-    
-    <!-- блок с экраном калькулятора, где будет выводиться результат вычислений. -->
-    <div id="result">
-      0
+    <div id="laba_text">
+        ЛР 1. Calculator. <mark>HTML/CSS.</mark>
+        Цель данной лабораторной работы - <mark>знакомство</mark> с инструментами построения пользовательских интерфейсов web-сайтов:
+        <mark>HTML, CSS</mark>. В ходе выполнения работы, вам предстоит ознакомиться с кодом реализации простого калькулятора,
+        и затем выполнить задания по варианту.
     </div>
 
-    <!-- блок с кнопками калькулятора. -->
-    <div>
-      <!--горизонтальный ряд из четырех кнопок-->
-      <div>  
-        <button id="btn_op_clear">C</button>    <!-- про тэг кнопки: https://www.w3schools.com/tags/tag_button.asp -->
-        <button id="btn_op_sign">+/-</button>
-        <button id="btn_op_percent">%</button>
-        <button id="btn_op_div">/</button>
-      </div>
+    <div id="laba_text2">
+        ЛР 2. Calculator. <mark>JavaScript.</mark>
+        Цель данной лабораторной работы - <mark>знакомство</mark> с инструментами построения пользовательских интерфейсов web-сайтов:
+        <mark>HTML, CSS, JavaScript.</mark> В ходе выполнения работы, вам предстоит продолжить реализовывать простой калькулятора,
+        и затем выполнить задания по варианту.</div>
 
-      <div>
-        <button id="btn_digit_7">7</button>
-        <button id="btn_digit_8">8</button>
-        <button id="btn_digit_9">9</button>
-        <button id="btn_op_mult">x</button>
-      </div>
+    <div id="calc">
+        <div id="result" class="result">
+            0
+        </div>
 
-      <div>
-        <button id="btn_digit_4">4</button>
-        <button id="btn_digit_5">5</button>
-        <button id="btn_digit_6">6</button>
-        <button id="btn_op_minus">-</button>
-      </div>
+        <div>
+            <div>
+                <button id="btn_coren" class="my_btn secondary">√</button>
+                <button id="btn_stepen" class="my_btn secondary">x^2</button>
+                <button id="btn_fact" class="my_btn secondary">x!</button>
+                <button id="btn_clear_one_sym" class="my_btn primary">←</button>
+            </div>
 
-      <div>
-        <button id="btn_digit_1">1</button>
-        <button id="btn_digit_2">2</button>
-        <button id="btn_digit_3">3</button>
-        <button id="btn_op_plus">+</button>
-      </div>
+            <div>
+                <button id="btn_op_clear" class="my_btn secondary">C</button>
+                <button id="btn_op_sign" class="my_btn secondary">+/-</button>
+                <button id="btn_op_percent" class="my_btn secondary">%</button>
+                <button id="btn_op_div" class="my_btn primary">/</button>
+            </div>
 
-      <div>
-        <button id="btn_digit_0">0</button>
-        <button id="btn_digit_dot">.</button>
-        <button id="btn_op_equal">=</button>
-      </div>
+            <div>
+                <button id="btn_digit_7" class="my_btn font_digit">7</button>
+                <button id="btn_digit_8" class="my_btn font_digit">8</button>
+                <button id="btn_digit_9" class="my_btn font_digit">9</button>
+                <button id="btn_op_mult" class="my_btn primary">X</button>
+            </div>
+
+            <div>
+                <button id="btn_digit_4" class="my_btn font_digit">4</button>
+                <button id="btn_digit_5" class="my_btn font_digit">5</button>
+                <button id="btn_digit_6" class="my_btn font_digit">6</button>
+                <button id="btn_op_minus" class="my_btn primary">-</button>
+            </div>
+
+            <div>
+                <button id="btn_digit_1" class="my_btn font_digit">1</button>
+                <button id="btn_digit_2" class="my_btn font_digit">2</button>
+                <button id="btn_digit_3" class="my_btn font_digit">3</button>
+                <button id="btn_op_plus" class="my_btn primary">+</button>
+            </div>
+
+            <div>
+                <button id="btn_digit_0" class="my_btn font_digit">0</button>
+                <button id="btn_000" class="my_btn secondary">000</button>
+                <button id="btn_digit_dot" class="my_btn secondary">.</button>
+                <button id="btn_op_equal" class="my_btn primary execute">=</button>
+            </div>
+
+            <input type="button" value="Сменить фон калькулятора" id="change_theme" onclick="changeColor()">
+            <input type="button" value="Сменить фон окна вывода" id="change_theme_window" onclick="changeColorWindow()">
+        </div>
     </div>
-  </div>
+
+    <p id="podpis">
+        <span>
+            ЛР выполнена Матуриным Романом Ренатовичем.
+            <a href="https://github.com/Jesternotclown-hub/WEB">
+                <button id="github">Github</button>
+            </a>
+        </span>
+    </p>
+
+    <div class="dropdown_list">
+        <button class="btn_open_list">Автор</button>
+            <div class="dropdown_content">
+                <a href="https://norvuz.ru/upload/timetable/1-ochnoe.xls">ИС-22</a>
+                <a href="https://polaruniversity.ru/about/faculties/fakultet-elektroenergetiki-ekonomiki-i-upravleniya-feeiu/kafedra-informatsionnye-sistemy-i-tekhnologii-isit/">ИСиТ</a>
+            </div>
+    </div>
 </body>
 </html>

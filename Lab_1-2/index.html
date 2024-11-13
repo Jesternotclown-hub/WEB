@@ -1,83 +1,37 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="script.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Калькулятор</title>
+    <title>Веб-калькулятор</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-    <div id="calc">
-        <div id="result" class="result">
-            0
-        </div>
-
-        <div>
-            <div>
-                <button id="btn_coren" class="my_btn secondary">√</button>
-                <button id="btn_stepen" class="my_btn secondary">x^2</button>
-                <button id="btn_fact" class="my_btn secondary">x!</button>
-                <button id="btn_clear_one_sym" class="my_btn primary">←</button>
-            </div>
-
-            <div>
-                <button id="btn_op_clear" class="my_btn secondary">C</button>
-                <button id="btn_op_sign" class="my_btn secondary">+/-</button>
-                <button id="btn_op_percent" class="my_btn secondary">%</button>
-                <button id="btn_op_div" class="my_btn primary">/</button>
-            </div>
-
-            <div>
-                <button id="btn_digit_7" class="my_btn font_digit">7</button>
-                <button id="btn_digit_8" class="my_btn font_digit">8</button>
-                <button id="btn_digit_9" class="my_btn font_digit">9</button>
-                <button id="btn_op_mult" class="my_btn primary">X</button>
-            </div>
-
-            <div>
-                <button id="btn_digit_4" class="my_btn font_digit">4</button>
-                <button id="btn_digit_5" class="my_btn font_digit">5</button>
-                <button id="btn_digit_6" class="my_btn font_digit">6</button>
-                <button id="btn_op_minus" class="my_btn primary">-</button>
-            </div>
-
-            <div>
-                <button id="btn_digit_1" class="my_btn font_digit">1</button>
-                <button id="btn_digit_2" class="my_btn font_digit">2</button>
-                <button id="btn_digit_3" class="my_btn font_digit">3</button>
-                <button id="btn_op_plus" class="my_btn primary">+</button>
-            </div>
-
-            <div>
-                <button id="btn_digit_0" class="my_btn font_digit">0</button>
-                <button id="btn_000" class="my_btn secondary">000</button>
-                <button id="btn_digit_dot" class="my_btn secondary">.</button>
-                <button id="btn_op_equal" class="my_btn primary execute">=</button>
-            </div>
-
-            <input type="button" value="Сменить фон калькулятора" id="change_theme" onclick="changeColor()">
-            <input type="button" value="Сменить фон окна вывода" id="change_theme_window" onclick="changeColorWindow()">
+    <div class="calculator">
+        <a href="https://github.com/Jesternotclown-hub/WEB/blob/main/Lab_1-2" target="_blank" class="github-button">Мой GitHub</a>
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="toggleSign()">±</button>
+            <button onclick="addSymbol('%')">%</button>
+            <button onclick="addSymbol('/')">/</button>
+            <button onclick="addSymbol('7')">7</button>
+            <button onclick="addSymbol('8')">8</button>
+            <button onclick="addSymbol('9')">9</button>
+            <button onclick="addSymbol('*')">×</button>
+            <button onclick="addSymbol('4')">4</button>
+            <button onclick="addSymbol('5')">5</button>
+            <button onclick="addSymbol('6')">6</button>
+            <button onclick="addSymbol('-')">−</button>
+            <button onclick="addSymbol('1')">1</button>
+            <button onclick="addSymbol('2')">2</button>
+            <button onclick="addSymbol('3')">3</button>
+            <button onclick="addSymbol('+')">+</button>
+            <button onclick="addSymbol('0')">0</button>
+            <button onclick="addSymbol('.')">.</button>
+            <button onclick="calculate()" class="equal">=</button>
         </div>
     </div>
-
-    <p id="podpis">
-        <span>
-            ЛР выполнена Матуриным Романом Ренатовичем.
-            <a href="https://github.com/Jesternotclown-hub/WEB">
-                <button id="github">Ссылка на гитхаб</button>
-            </a>
-        </span>
-    </p>
-
-    <div class="dropdown_list">
-        <button class="btn_open_list">Автор</button>
-            <div class="dropdown_content">
-                <a href="https://norvuz.ru/upload/timetable/1-ochnoe.xls">ИС-22</a>
-                <a href="https://polaruniversity.ru/about/faculties/fakultet-elektroenergetiki-ekonomiki-i-upravleniya-feeiu/kafedra-informatsionnye-sistemy-i-tekhnologii-isit/">ИСиТ</a>
-            </div>
-    </div>
+    <script src="script.js"></script>
 </body>
 </html>

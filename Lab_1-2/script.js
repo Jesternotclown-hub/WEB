@@ -1,29 +1,42 @@
-let display = document.getElementById('display');
+const MAX_LENGTH = 12; // Максимальное количество символов
 
-function clearDisplay() {
-    display.innerText = '0';
-}
-
-function toggleSign() {
-    if (display.innerText !== '0') {
-        display.innerText = display.innerText.startsWith('-')
-            ? display.innerText.slice(1)
-            : '-' + display.innerText;
+function appendToOutput(value) {
+    const output = document.getElementById('output');
+    if (output.textContent.length < MAX_LENGTH) {
+        output.textContent = output.textContent === '0' ? value : output.textContent + value;
     }
 }
 
-function addSymbol(symbol) {
-    if (display.innerText === '0' && symbol !== '.') {
-        display.innerText = symbol;
-    } else {
-        display.innerText += symbol;
-    }
+function clearOutput() {
+    document.getElementById('output').textContent = '0';
 }
 
 function calculate() {
+    const output = document.getElementById('output');
     try {
-        display.innerText = eval(display.innerText.replace('×', '*').replace('−', '-'));
+        output.textContent = eval(output.textContent) || '0'; // Используйте eval с осторожностью
     } catch {
-        display.innerText = 'Ошибка';
+        output.textContent = 'Ошибка';
+    }
+}
+
+function square() {
+    const output = document.getElementById('output');
+    const result = Math.pow(eval(output.textContent), 2);
+    output.textContent = result.toString();
+}
+
+function squareRoot() {
+    const output = document.getElementById('output');
+    const result = Math.sqrt(eval(output.textContent));
+    output.textContent = result.toString();
+}
+
+function toggleTheme() {
+    const calculator = document.querySelector('.calculator');
+    if (calculator.style.backgroundColor === 'black') {
+        calculator.style.backgroundColor = '#2A2A2A'; // Темный фон
+    } else {
+        calculator.style.backgroundColor = 'black'; // Смените фон на черный
     }
 }

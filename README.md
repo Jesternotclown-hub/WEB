@@ -4,6 +4,6 @@
 
 Выполненные лабараторные работы:
 
-1 - https://jesternotclown-hub.github.io/WEB/Lab_1-2/index.html
+1 - https://github.com/Jesternotclown-hub/WEB/blob/main/Lab_1-2/index.html
 
-2 - https://jesternotclown-hub.github.io/WEB/Lab_1-2/index.html
+2 - https://github.com/Jesternotclown-hub/WEB/blob/main/Lab_1-2/index.html

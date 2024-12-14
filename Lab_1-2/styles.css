@@ -1,0 +1,96 @@
+body {
+    background-image: url('fon.jpg'); /* Замените на свой путь к изображению */
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.calculator {
+    background-color: #2A2A2A; /* Темный фон */
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.output {
+    background-color: #FFFFFF; /* Светлый фон для вывода */
+    color: #000000; /* Черный цвет текста */
+    font-size: 24px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold; /* Толстый шрифт */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.btn {
+    padding: 15px;
+    background-color: #FF5722; /* Яркий цвет кнопок */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Кнопки квадратные */
+    font-weight: bold; /* Толстый шрифт */
+}
+
+.btn:hover {
+    background-color: #FF9800; /* Цвет при наведении */
+}
+
+.theme-btn {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #FF5722; /* Цвет кнопки смены темы такой же, как у кнопок калькулятора */
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.github-btn {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #333; /* Серый цвет кнопки GitHub */
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer {
+    margin-top: 20px;
+    color: white; /* Цвет текста белый */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.highlight {
+    background-color: yellow; /* Подсветка слов */
+}

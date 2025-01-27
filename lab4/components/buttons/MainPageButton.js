@@ -4,7 +4,7 @@ export class MainPageButton{
     }
 
     getHTML(){
-        return (`<button type="button" class="btn btn-warning">Посмотреть профиль</button>`)
+        return (`<button type="button" class="btn btn-primary">Открыть профиль</button>`)
     }
 
     addListeners(listener) {

@@ -5,7 +5,7 @@ export class MainPageButton{
     }
 
     getHTML(){
-        return (`<button type="button" class="btn btn-primary" id="${this.id}" style="position: absolute; bottom: 5px;">bb money</button>`)
+        return (`<button type="button" class="btn btn-primary" id="${this.id}">bb money</button>`)
     }
 
     addListeners(listener) {

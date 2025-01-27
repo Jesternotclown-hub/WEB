@@ -10,19 +10,35 @@ window.onload = function(){
     // окно вывода результата
     outputElement = document.getElementById("result")
     
+    
+    
     // список объектов кнопок циферблата (id которых начинается с btn_digit_)
     digitButtons = document.querySelectorAll('[id ^= "btn_digit_"]')
     
     function onDigitButtonClicked(digit) {
         if (!selectedOperation) {
-            if ((digit != '.') || (digit == '.' && !a.includes(digit))) { 
-                a += digit
+            // Проверка на ввод '0'
+            if (digit === '0' && a.length > 0 && a[a.length - 1] === '0') {
+                return; // Не добавляем второй '0'
             }
-            outputElement.innerHTML = a
+    
+            // Проверка на ввод '.'
+            if ((digit !== '.') || (digit === '.' && !a.includes(digit))) {
+                a += digit;
+            }
+            
+            outputElement.innerHTML = a;
+    
         } else {
-            if ((digit != '.') || (digit == '.' && !b.includes(digit))) { 
-                b += digit
-                outputElement.innerHTML += digit     
+            // Проверка на ввод '0'
+            if (digit === '0' && b.length > 0 && b[b.length - 1] === '0') {
+                return; // Не добавляем второй '0'
+            }
+    
+            // Проверка на ввод '.'
+            if ((digit !== '.') || (digit === '.' && !b.includes(digit))) {
+                b += digit;
+                outputElement.innerHTML += digit;
             }
         }
     }
@@ -138,10 +154,17 @@ window.onload = function(){
     }
 
     document.getElementById('btn_root').onclick = function() {
-        if (a !== '') {
-            expressionResult = Math.sqrt(+a)
+        if (a > 0) {
+            expressionResult = Math.sqrt(a)
             a = expressionResult.toString()
             outputElement.innerHTML = a
+        }
+        else{
+            a = ''
+            b = ''
+            selectedOperation = null
+            expressionResult = ''
+            outputElement.innerHTML = 0
         }
     }
 
@@ -163,7 +186,7 @@ window.onload = function(){
                 }
                 if (expressionResult === Infinity)
                 {
-                    outputElement.innerHTML = expressionResult
+                    outputElement.innerHTML = ''
                     a = ''
                 }
                 else {

@@ -13,19 +13,28 @@ export class MainPage{
         return document.getElementById('root')
     }
 
-    getData() {        
-        this.ajax.post(this.urls.getGroupMembers(groupId), (data) => {
-            this.renderItem(data.response.items, this.pageRoot)
-        })
+    getData(){        
+        let xhr = new XMLHttpRequest()
+        xhr.open('GET', 'http://localhost:8000/vk')
+        xhr.send()
+        xhr.onload = () =>{
+            this.renderItem(JSON.parse(xhr.response))
+        }
     }
- 
-    renderItem(items, page){
+     
+    renderItem(items) {
+        let card;
+        const page = this.pageRoot
+        items.forEach(el => {
+            console.log(el)
+            card = new HumanCard(page, el)
+            card.render(false)
+        });
         document.getElementById("up").onclick = function(){
-            
             document.getElementById("root").innerHTML = ''
             items = items.sort((a, b) => parseFloat(a.id) - parseFloat(b.id))
             items.forEach(el => {
-                const card = new HumanCard(page, el)
+                card = new HumanCard(page, el)
                 card.render(false)
             });
         }
@@ -33,16 +42,12 @@ export class MainPage{
             document.getElementById("root").innerHTML = ''
             items = items.sort((a, b) => parseFloat(b.id) - parseFloat(a.id))
             items.forEach(el => {
-                const card = new HumanCard(page, el)
+                card = new HumanCard(page, el)
                 card.render(false)
             });
         }
-        items.forEach(el => {
-            const card = new HumanCard(page, el)
-            card.render(false)
-        });
     }
-
+    
     render() {
         this.parent.innerHTML = ''
         this.getData()

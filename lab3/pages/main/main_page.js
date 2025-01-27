@@ -2,6 +2,7 @@ import {AssetsPage} from '../Assets/assets_page.js'
 import {FinancePage} from '../finance/finance_page.js'
 import {InvestPage} from '../investment/invest_page.js'
 import { Data } from '../../components/main_page_data/Data.js'
+import { cardPage } from '../cards/card.js'
 
 export class MainPage{
     
@@ -22,23 +23,19 @@ export class MainPage{
         )
     }
 
-    render() {
-        const data = new Data()
+    render = async () => {
         this.root.innerHTML = ''
         const html = this.getHTML()
         this.root.insertAdjacentHTML('beforeend', html)
         const page = this.pageRoot
-        const getData = data.getData()
-
-        const finance_page = new FinancePage(page, getData[0])
-        finance_page.render(false)
-       
-
-        const invest_page = new InvestPage(page, getData[1])
-        invest_page.render(false)
-        
-
-        const assets_page = new AssetsPage(page, getData[2])
-        assets_page.render(false)        
+        let response = await fetch('http://localhost:8000/stocks')
+        let getData = await response.json()
+        let id = 1
+        getData.forEach(element => {
+            const card = new cardPage(page, element, element.id)
+            card.render(false)
+            id += 1
+        });
+        id = 1     
     }
 }

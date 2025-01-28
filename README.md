@@ -6,9 +6,9 @@
 
 3 - https://Jesternotclown-hub.github.io/WEB/lab3/index.html
 
-4 - 
+4 - https://Jesternotclown-hub.github.io/WEB/lab4/index.html
 
-5 -
+5 - https://Jesternotclown-hub.github.io/WEB/lab5/index.html
 
-6 - 
+6 - https://Jesternotclown-hub.github.io/WEB/lab6/index.html
 
